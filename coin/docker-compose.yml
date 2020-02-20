@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+  rng:
+    build: rng
+    ports:
+    - "8001:8080"
+## mapping interal docker port 8080 to 8001 for external serives (used in worker service in opur case) 
+    
+
+  hasher:
+    build: hasher
+    ports:
+    - "8002:8080"
+## mapping interal docker port 8080 to 8002 for external serives (used in worker service in opur case) 
+  webui:
+    build: webui
+    ports:
+    - "8000:80"
+    volumes:
+    - "./webui/files/:/files/"
+    links:
+     - redis
+
+  redis:
+    image: redis
+#redis image downloading from docker hub    
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+    - "6379:6379"
+
+  worker:
+    build: worker
+    links:
+     - redis
