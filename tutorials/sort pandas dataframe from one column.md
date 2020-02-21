@@ -1,35 +1,29 @@
 +++
-title = "How to make Tkinter Text widget read only"
+title = how to sort pandas dataframe by column"
 date = 2019-11-24T13:32:59+01:00
 draft = false
 weight = 120
-keywords = ["Tkinter Text widget", "Tkinter Text widget read only", "Tkinter make Text widget read-only", "how to make Tkinter Text widget read only"]
-description = "This tutorial demonstrates how to make Tkinter Text widget read-only."
-tags = ["Tkinter Text", "Tkinter"]
+keywords = [""]
+description = "This tutorial demonstrates  how to sort pandas dataframe by column."
+tags = ["pandas", "Pandas Dataframe Sorting"]
 author = "Jinku Hu"
 postlink = 12364981
 inarticle = true
 
 +++
 
-We will introduce methods to make the Tkinter Text widget read-only,
+We will introduce methods to sort the dataframes records by column,
 
-1. Set the `Text` state to be `disable`
-2. Bind any key press to the `break` function
-
-## Set the `Text` State to `disable` to make Tkinter `Text` read only
-
-The `Text` widget becomes read-only after its state is set to be `disable`.
+Consider the following dataframe
 
 ```python
-import tkinter as tk
-root = tk.Tk()
-readOnlyText = tk.Text(root)
-readOnlyText.insert(1.0,"ABCDEF")
-readOnlyText.configure(state='disabled')
-readOnlyText.pack()
-
-root.mainloop()
+import pandas as pd
+df = pd.DataFrame({
+    'col1': ['A', 'A', 'B', 'C', 'D', 'C'],
+    'col2': [2, 1, 9, 8, 7, 4],
+    'col3': [0, 1, 9, 4, 2, 3],
+})
+print(df)
 ```
 
 The default state of a `Text` widget is `NORMAL`, that means the user could edit, append, insert or edit text content in it.
