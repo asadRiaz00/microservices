@@ -35,7 +35,7 @@ If you run this  code you will get the output as following which have values in 
 ---
 **NOTE**
 
-Value will be different every time we run the code because we are generating random values here.
+Values will be different every time we run the code because we are generating random values here.
 
 ---
 
