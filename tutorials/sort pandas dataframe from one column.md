@@ -12,27 +12,79 @@ inarticle = true
 
 +++
 
-We will introduce methods to sort the dataframes records by column,
+We will introduce method `pandas.DataFrame.sort_values` to sort the dataframes records,
 
 Consider the following dataframe
 
 ```python
 import pandas as pd
 df = pd.DataFrame({
-    'col1': ['A', 'A', 'B', 'C', 'D', 'C'],
-    'col2': [2, 1, 9, 8, 7, 4],
-    'col3': [0, 1, 9, 4, 2, 3],
+    'col1': ['g', 't', 'n', 'w', 'n', 'g'],
+    'col2': [5, 2, 5, 1, 3, 6],
+    'col3': [0, 7, 2, 8,1, 2],
 })
 print(df)
 ```
-If you run the abovethe code you will get the output as following 
+If you run this  code you will get the output as following which is not sorted 
 
 ```
+col1  col2  col3
+0    g     5     0
+1    t     2     7
+2    n     5     2
+3    w     1     8
+4    n     3     1
+5    g     6     2
+```
+
+Now, change the code as follow 
+
+```
+import pandas as pd
+df = pd.DataFrame({
+    'col1': ['g', 't', 'n', 'w', 'n', 'g'],
+    'col2': [5, 2, 5, 1, 3, 6],
+    'col3': [0, 7, 2, 8,1, 2],
+})
+print(df.sort_values(by=['col1']))
+```
+
+We sorted dataframe by `col1`. After running above module you will get the following output 
+
+```
+0    g     5     0
+5    g     6     2
+2    n     5     2
+4    n     3     1
+1    t     2     7
+3    w     1     8
+```
+We can use more then one column for sorting as well, let change the the last line of above code as follow
+```
+print(df.sort_values(by=['col1','col2']))
+```
+after running the code we will get the following output. 
+```
  col1  col2  col3
-0    A     2     0
-1    A     1     1
-2    B     9     9
-3    C     8     4
-4    D     7     2
-5    C     4     3
+0    g     5     0
+5    g     6     2
+4    n     3     1
+2    n     5     2
+1    t     2     7
+3    w     1     8
+```
+Now  dataframe is further sorted by `col2` as well. By default sorting is in ascending order, to change dataframe in descending order,we need to set it to  `ascending=false`.
+```
+print(df.sort_values(by=['col1','col2'], ascending=False))
+```
+
+after running the code we will get the following output. 
+```
+col1  col2  col3
+3    w     1     8
+1    t     2     7
+2    n     5     2
+4    n     3     1
+5    g     6     2
+0    g     5     0
 ```
