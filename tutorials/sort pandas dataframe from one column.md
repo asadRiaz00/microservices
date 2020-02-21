@@ -61,7 +61,7 @@ We sorted dataframe by `col1`. After running above module you will get the follo
 3    w     1     8
 ```
 We can use more then one column for sorting as well, let change the the last line of above code as follow
-```
+```python
 print(df.sort_values(by=['col1','col2']))
 ```
 after running the code we will get the following output. 
@@ -80,7 +80,7 @@ print(df.sort_values(by=['col1','col2'], ascending=False))
 ```
 
 after running the code we will get the following output. 
-```
+```python
     col1  col2  col3
 3    w     1     8
 1    t     2     7
