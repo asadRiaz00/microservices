@@ -25,7 +25,7 @@ df = pd.DataFrame({
 })
 print(df)
 ```
-If you run this  code you will get the output as following which is not sorted 
+If you run this  code you will get the output as following which is not sorted yet.
 
 ```
     col1  col2  col3
@@ -37,7 +37,7 @@ If you run this  code you will get the output as following which is not sorted
 5    g     6     2
 ```
 
-Now, change the code as follow 
+Now change the code as below. 
 
 ```python
 import pandas as pd
@@ -49,7 +49,7 @@ df = pd.DataFrame({
 print(df.sort_values(by=['col1']))
 ```
 
-We sorted dataframe by `col1`. After running above module you will get the following output 
+We sorted dataframe by `col1`. After running above module you will get the following output.
 
 ```
     col1  col2  col3
@@ -60,11 +60,13 @@ We sorted dataframe by `col1`. After running above module you will get the follo
 1    t     2     7
 3    w     1     8
 ```
-We can use more then one column for sorting as well, let change the the last line of above code as follow
+We can use more then one column for sorting as well, let change the the last line of above code as follow,
+
 ```python
 print(df.sort_values(by=['col1','col2']))
 ```
-after running the code we will get the following output. 
+After running the code we will get the following output. 
+
 ```
     col1  col2  col3
 0    g     5     0
@@ -75,11 +77,13 @@ after running the code we will get the following output.
 3    w     1     8
 ```
 Now  dataframe is further sorted by `col2` as well. By default sorting is in ascending order, to change dataframe in descending order,we need to set flag  `ascending=false`.
+
 ```python
 print(df.sort_values(by=['col1','col2'], ascending=False))
 ```
 
-after running the code we will get the following output. 
+After running the code we will get the following output. 
+
 ```
     col1  col2  col3
 3    w     1     8
