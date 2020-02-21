@@ -28,7 +28,7 @@ print(df)
 If you run this  code you will get the output as following which is not sorted 
 
 ```
-col1  col2  col3
+    col1  col2  col3
 0    g     5     0
 1    t     2     7
 2    n     5     2
@@ -52,6 +52,7 @@ print(df.sort_values(by=['col1']))
 We sorted dataframe by `col1`. After running above module you will get the following output 
 
 ```
+    col1  col2  col3
 0    g     5     0
 5    g     6     2
 2    n     5     2
@@ -65,7 +66,7 @@ print(df.sort_values(by=['col1','col2']))
 ```
 after running the code we will get the following output. 
 ```
- col1  col2  col3
+    col1  col2  col3
 0    g     5     0
 5    g     6     2
 4    n     3     1
@@ -73,14 +74,14 @@ after running the code we will get the following output.
 1    t     2     7
 3    w     1     8
 ```
-Now  dataframe is further sorted by `col2` as well. By default sorting is in ascending order, to change dataframe in descending order,we need to set it to  `ascending=false`.
+Now  dataframe is further sorted by `col2` as well. By default sorting is in ascending order, to change dataframe in descending order,we need to set flag  `ascending=false`.
 ```
 print(df.sort_values(by=['col1','col2'], ascending=False))
 ```
 
 after running the code we will get the following output. 
 ```
-col1  col2  col3
+    col1  col2  col3
 3    w     1     8
 1    t     2     7
 2    n     5     2
