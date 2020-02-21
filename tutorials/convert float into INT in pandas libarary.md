@@ -96,22 +96,7 @@ print('*********** Rounding Float value to INT ************')
 print(df.round(0).astype(int))
 print('***********************************************')
 print('***********************************************')
-```
-After running the code we will get the following output. 
 
-```
-    col1  col2  col3
-0    g     5     0
-5    g     6     2
-4    n     3     1
-2    n     5     2
-1    t     2     7
-3    w     1     8
-```
-Now  dataframe is further sorted by `col2` as well. By default sorting is in ascending order, to change dataframe in descending order,we need to set flag  `ascending=false`.
-
-```python
-print(df.sort_values(by=['col1','col2'], ascending=False))
 ```
 
 After running the code we will get the following output. 
