@@ -75,12 +75,12 @@ after running the code we will get the following output.
 3    w     1     8
 ```
 Now  dataframe is further sorted by `col2` as well. By default sorting is in ascending order, to change dataframe in descending order,we need to set flag  `ascending=false`.
-```
+```python
 print(df.sort_values(by=['col1','col2'], ascending=False))
 ```
 
 after running the code we will get the following output. 
-```python
+```
     col1  col2  col3
 3    w     1     8
 1    t     2     7
