@@ -39,7 +39,7 @@ If you run this  code you will get the output as following which is not sorted
 
 Now, change the code as follow 
 
-```
+```python
 import pandas as pd
 df = pd.DataFrame({
     'col1': ['g', 't', 'n', 'w', 'n', 'g'],
