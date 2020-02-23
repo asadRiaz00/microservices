@@ -1,13 +1,13 @@
 +++
 title = "How to sort pandas dataframe by column"
-date = 2019-11-24T13:32:59+01:00
+date = 2020-02-24T09:43:59+05:00
 draft = false
 weight = 120
 keywords = [""]
 description = "This tutorial demonstrates  how to sort pandas dataframe by column."
 tags = ["pandas", "Pandas Dataframe Sorting"]
-author = "Jinku Hu"
-postlink = 12364981
+author = "Asad Riaz"
+postlink = 37787698
 inarticle = true
 
 +++
@@ -100,4 +100,31 @@ After running the code we will get the following output.
 5    g     6     2
 0    g     5     0
 ```
+
+
+
+## `dataframe` Sorting Order - Argument `na_position`
+
+Decides the position of NaNs after sorting i.e.  `last` puts NaNs at the end. Default value is `first`
+
+Consider the following `dataframe`,
+
+```python
+import numpy as np
+import pandas as pd
+s = pd.Series([np.nan, 2, 4, 10, 7])
+print(s.sort_values(na_position='last'))
+```
+
+After running the code we will get the following output. 
+
+```
+1     2.0
+2     4.0
+4     7.0
+3    10.0
+0     NaN
+```
+
+
 

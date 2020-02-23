@@ -1,20 +1,22 @@
 +++
 title = "how to convert a float to an integer in a Pandas DataFrame"
-date = 2020-02-22T10:32:59+01:00
+date = 2020-02-24T00:00:59+01:00
 draft = false
 weight = 120
 keywords = [""]
 description = "This tutorial demonstrates  to convert a float to an integer in a Pandas DataFrame."
-tags = ["", ""]
-author = "Jinku Hu"
-postlink = 12364981
+tags = ["python", "pandas", "floating-point", "integer", "dataset", ""]
+author = "Asad Riaz"
+postlink = 21291259
 inarticle = true
 
 +++
 
-We will  demonstrates method   to convert a float to an integer in a Pandas `DataFrame`.
+We will demonstrate the method to convert a float to an integer in a Pandas `DataFrame`.
 
-First we create random array using `numpy` library and then convert it into `Dataframe`.
+First, we create a random array using a  `numpy`library and then convert it into `Dataframe`.
+
+
 
 ```python
 import pandas as pd
@@ -124,3 +126,22 @@ After running the code we will get the following output.
 ***********************************************
 ***********************************************
 ```
+
+## Another way by using `to_numaric()` method
+
+This methods provides functionality to safely convert non-numeric types (e.g. strings) to a suitable numeric type. Take separate series and convert to numeric, coercing when told to
+
+```python
+s = pd.Series(['1.0', '2', -3])
+print(pd.to_numeric(s, downcast='integer'))
+```
+
+After running the code we will get the following output. 
+
+```
+0    1
+1    2
+2   -3
+dtype: int8
+```
+
